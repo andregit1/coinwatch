@@ -1,0 +1,338 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+	text-decoration: none;
+}
+
+.width {
+	max-width: 600px;
+	margin: 0 auto;
+	width: 92%;
+}
+
+.header {
+	background-color: #111;
+	color: white;
+	padding: 20px 0;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+	.width {
+		position: relative;
+		//
+		display: grid;
+		grid-template-columns: 1fr auto 1fr; // Three columns with the middle column auto-sized
+		align-items: center;
+		gap: 10px; // Adjust if needed
+	}
+
+	h1 {
+		text-align: center;
+		color: white;
+		text-transform: uppercase;
+		font-size: 30px;
+		letter-spacing: 4px;
+		//
+		grid-column: 2; // Center the h1 in the middle column
+	}
+
+	a {
+		color: white;
+		//
+		display: flex;
+		justify-content: center;
+	}
+
+	// svg {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 0;
+	// 	margin-top: -12px;
+	// }
+
+	svg {
+		display: flex;
+		justify-content: center;
+	}
+
+	.icon-left {
+		grid-column: 1; // Place the icon in the first column
+		display: flex;
+		justify-content: flex-start;
+		cursor: pointer;
+	}
+
+	.icon-right {
+		grid-column: 3; // Place the icon in the third column
+		display: flex;
+		justify-content: flex-end;
+		cursor: pointer;
+	}
+}
+
+.home-search {
+	padding: 40px 0;
+	text-align: center;
+	h2 {
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
+
+	input {
+		border: 2px solid #ddd;
+		padding: 0 24px;
+		line-height: 54px;
+		border-radius: 10px;
+		font-size: 18px;
+		text-transform: lowercase;
+	}
+
+	input::placeholder {
+		font-size: 20px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+}
+
+@keyframes rotating {
+	from {
+		transform: translateY(-50%) rotate(0deg);
+	}
+	to {
+		transform: translateY(-50%) rotate(360deg);
+	}
+}
+.rotating {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+
+.home-search-input {
+	position: relative;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 20px;
+		animation: 2s rotating infinite linear;
+		opacity: 0;
+		transition: 0.2s opacity;
+	}
+
+	&.searching svg {
+		opacity: 1;
+	}
+}
+
+input[type='text'] {
+	appearance: none;
+	outline: none;
+	display: block;
+	width: 100%;
+}
+
+.home-cryptos {
+	padding-bottom: 60px;
+	h2 {
+		font-size: 22px;
+		margin-bottom: 15px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+	}
+}
+
+.home-cryptos-index {
+	border-top: 1px solid rgb(47, 39, 39);
+}
+
+.home-crypto {
+	a {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		padding: 20px 0;
+		border-bottom: 1px solid gray;
+	}
+	span {
+		display: block;
+	}
+}
+
+.home-crypto-image {
+	width: 50px;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.home-crypto-name {
+	flex: 1;
+	font-size: 20px;
+	color: #111;
+	font-weight: 600;
+}
+
+.home-crypto-btc {
+	color: #111;
+	font-size: 18px;
+	text-align: right;
+
+	img {
+		width: 18px;
+		display: inline-block;
+		margin: -2px 4px 0 0;
+		vertical-align: middle;
+	}
+}
+.home-crypto-idr {
+	color: #777;
+	font-size: 14px;
+	text-align: right;
+}
+
+.show-header {
+	padding: 40px 0;
+	text-align: center;
+
+	img {
+		width: 80px;
+		border-radius: 50%;
+		margin: 0 auto;
+	}
+
+	h2 {
+		margin-top: 10px;
+		font-size: 32px;
+	}
+}
+
+.show-graph {
+	height: 200px;
+	width: 100%;
+}
+
+.show-details {
+	padding-top: 40px;
+	padding-bottom: 60px;
+
+	h2 {
+		font-size: 18px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+}
+
+.show-details-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0;
+	border-bottom: 1px solid rgb(53, 53, 198);
+	color: #777;
+	h4 {
+		font-size: 16px;
+	}
+}
+
+.wallet-card-container {
+	margin-top: 30px;
+}
+
+.wallet-card {
+	padding: 20px;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	border: 2px solid #777;
+	display: flex;
+	flex-direction: column;
+}
+
+.wallet-content {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	align-content: flex-end;
+}
+
+.account-address,
+.balance-amount {
+	font-weight: 500; /* Slightly bolder text */
+	// font-size: 14px;
+}
+
+.account-address {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Space between address and icon */
+	width: 100%; /* Ensure full width for address */
+}
+
+.balance-amount {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Space between balance and icon */
+}
+
+.account-address span:first-child {
+	flex: 1; /* Allow address text to grow */
+}
+
+.balance-amount span:first-child {
+	flex: 1; /* Allow address text to grow */
+}
+
+.error-message {
+	color: #dc3545;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.disconnected {
+	color: #dc3545;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+
+.footer {
+	background-color: #111;
+	color: white;
+	padding: 10px 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+	text-align: center;
+
+	.width {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: 10px;
+	}
+
+	h3 {
+		text-align: center;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		grid-column: 2;
+	}
+}
