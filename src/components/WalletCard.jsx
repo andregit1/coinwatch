@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 import walletCardStore from '../stores/walletCardStore';
 
@@ -6,7 +6,7 @@ const { ethers } = require('ethers');
 
 function WalletCard() {
 	const store = walletCardStore();
-	const { connected, connCardText, errorMessage, defaultAccount, userBalance, userBalanceIDR, setUserBalance, provider, showAddress, showBalance, toggleVisibility } = store;
+	const { connected, errorMessage, defaultAccount, userBalance, userBalanceIDR, setUserBalance, provider, showAddress, showBalance, toggleVisibility } = store;
 
 	React.useEffect(() => {
 		if (defaultAccount) {
