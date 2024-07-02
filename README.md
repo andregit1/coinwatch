@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Coinwatch is a React application that tracks and displays cryptocurrency data, including wallet balances and conversions. This README provides instructions on how to run the application using Docker and without Docker, as well as guidance for setting up and using MetaMask.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+- Node.js (version 18 or higher -- this app using version **20.15.0**)
+- Docker and Docker Compose (for Docker setup)
 
-### `npm start`
+## Running the App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Without Docker
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the Repository**
 
-### `npm test`
+   ```bash
+   git clone https://github.com/andregit1/coinwatch.git
+   cd coinwatch
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install Dependencies**
 
-### `npm run build`
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Start the Application**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Open the App in Your Browser**
+   ```
+   Open http://localhost:3000 in your browser
+   ```
 
-### `npm run eject`
+### With Docker
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the Repository**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/andregit1/coinwatch.git
+   cd coinwatch
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Build the Docker Image**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   docker-compose build
+   ```
 
-## Learn More
+3. **Start the Application**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   docker-compose up
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Open the App in Your Browser**
+   ```
+   Open http://localhost:3000 in your browser
+   ```
 
-### Code Splitting
+## MetaMask Setup and Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Install MetaMask
 
-### Analyzing the Bundle Size
+1. **Download and Install MetaMask**
+   - Visit the [MetaMask website](https://metamask.io/) and download the extension for your preferred browser.
+   - Follow the installation instructions and add the MetaMask extension to your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Set Up MetaMask
 
-### Making a Progressive Web App
+1. **Create a New Wallet or Import an Existing Wallet**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   - Open the MetaMask extension and follow the instructions to create a new wallet or import an existing wallet using your seed phrase.
 
-### Advanced Configuration
+2. **Connect to Ethereum Mainnet or a Test Network**
+   - Ensure MetaMask is connected to the Ethereum Mainnet or a test network (e.g., Ropsten, Rinkeby) depending on your use case.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Using MetaMask with Coinwatch
 
-### Deployment
+1. **Connect Your Wallet**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   - Open Coinwatch in your browser.
+   - Click on the wallet icon in the header to connect your MetaMask wallet to Coinwatch.
+   - Follow the MetaMask prompts to approve the connection.
 
-### `npm run build` fails to minify
+2. **View Wallet Information**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   - Once connected, your wallet address and balance will be displayed in the WalletCard component.
+   - Use the eye icons to toggle the visibility of your address and balance.
+
+3. **Fetch Cryptocurrency Data**
+   - Coinwatch fetches and displays cryptocurrency data using the CoinGecko API. Ensure you have an internet connection to fetch the latest data.
